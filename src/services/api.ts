@@ -3,7 +3,7 @@ import axios from "axios";
 // Use Vite proxy in development, configurable URL in production
 const isProduction = import.meta.env.PROD;
 const API_BASE_URL = isProduction
-  ? import.meta.env.VITE_API_URL || "http://localhost:8080"
+  ? import.meta.env.VITE_API_URL || "http://localhost:5000"
   : ""; // Empty string uses Vite proxy in development
 
 const api = axios.create({
