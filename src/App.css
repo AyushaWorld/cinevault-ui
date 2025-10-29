@@ -1,0 +1,226 @@
+/* App.css - Netflix-level cinematic styles */
+
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Netflix-style hero section */
+.hero-section {
+  position: relative;
+  padding: 100px 0 60px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(20, 20, 20, 0.5) 100%
+  );
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(229, 9, 20, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Cinematic card effects */
+.netflix-card {
+  background: rgba(47, 47, 47, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.netflix-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(229, 9, 20, 0.1) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.netflix-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 9, 20, 0.3);
+  border-color: rgba(229, 9, 20, 0.5);
+}
+
+.netflix-card:hover::before {
+  opacity: 1;
+}
+
+/* Button styles */
+.netflix-button {
+  background: var(--netflix-red);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.netflix-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.netflix-button:hover {
+  background: #f40612;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5);
+}
+
+.netflix-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.netflix-button:active {
+  transform: scale(0.98);
+}
+
+/* Input field styles */
+.netflix-input {
+  background: rgba(47, 47, 47, 0.8);
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 4px;
+  padding: 14px 18px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.netflix-input:focus {
+  outline: none;
+  border-color: var(--netflix-red);
+  background: rgba(47, 47, 47, 1);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
+}
+
+.netflix-input::placeholder {
+  color: rgba(128, 128, 128, 0.8);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.netflix-spinner {
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--netflix-red);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Backdrop overlay */
+.netflix-backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+/* Pulsing glow effect */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-glow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(47, 47, 47, 0.8) 0%,
+    rgba(229, 9, 20, 0.2) 50%,
+    rgba(47, 47, 47, 0.8) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Cinematic text styles */
+.hero-title {
+  font-family: "Bebas Neue", cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #ffffff 0%, #e50914 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .netflix-card:hover {
+    transform: translateY(-5px) scale(1.02);
+  }
+
+  .hero-section {
+    padding: 80px 0 40px;
+  }
+}
