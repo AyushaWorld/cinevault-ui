@@ -52,7 +52,7 @@ const Login: React.FC = () => {
         justifyContent: "center",
         position: "relative",
         pt: { xs: 8, lg: 10 },
-        pb: { xs: 4, lg: 6 },
+        // pb: { xs: 4, lg: 6 },
         px: { xs: 2, lg: 3 },
         "&::before": {
           content: '""',
@@ -117,7 +117,6 @@ const Login: React.FC = () => {
                   lg: "2.6rem",
                   xl: "4.5rem",
                 },
-                mb: { xs: 1, lg: 1 },
                 textAlign: "center",
               }}
             >
