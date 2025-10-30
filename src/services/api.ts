@@ -7,7 +7,7 @@ const API_BASE_URL = isProduction
   : ""; // Empty string uses Vite proxy in development
 
 const api = axios.create({
-  baseURL: `${API_BASE_URL}/api`,
+  baseURL: `${API_BASE_URL}`,
   headers: {
     "Content-Type": "application/json",
   },
