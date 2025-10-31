@@ -1,5 +1,5 @@
 # Movie & TV Show Manager - Frontend
-
+https://docs.google.com/document/d/1juyOnZsk7C3S5tPq6lPcML1UxsFLY4JF0E8npGdiBmA/edit?usp=sharing
 React + TypeScript + Vite + Material-UI + TailwindCSS frontend application.
 
 ## Features
